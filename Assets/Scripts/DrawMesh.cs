@@ -38,7 +38,11 @@ public class DrawMesh : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit))
         {
-            transform.position = hit.point;
+            if (hit.collider.CompareTag("Easel"))
+            {
+                transform.position = hit.point;
+            }
+           
         }
     }
 
